@@ -1,30 +1,34 @@
-﻿int a1, a2, a3;
+﻿int num1 = 0; int num2 = 0;
 
-Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-Console.Write("Forneça o primeiro número : ");
-a1 = int.Parse(Console.ReadLine());
-Console.Write("Forneça o segundo número : ");
-a2 = int.Parse(Console.ReadLine());
-Console.Write("Forneça o terceiro número : ");
-a3 = int.Parse(Console.ReadLine());
-if ((a1 + a2 + a3 > 30) && (a1 == a2))
-{
-    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    Console.WriteLine("A resposta é maior que 30");
-}
-else
-{
-    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    Console.WriteLine("A resposta NÃO é maior que 30");
+Console.WriteLine(" Calculadora em --> C#\r");
 
-}
-if (a1 == a2)
+Console.WriteLine("digite um número: ");
+num1 = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("digite outro número: ");
+num2 = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("escolha uma opção da lista a seguir:");
+Console.WriteLine("\ta - Adição");
+Console.WriteLine("\ts - Subtração");
+Console.WriteLine("\tm - Multiplicação");
+Console.WriteLine("\td - Divisão");
+Console.Write("escolha um ");
+
+switch (Console.ReadLine())
 {
-    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    Console.WriteLine("E o primeiro número fornecido é igual ao segundo.");
+    case "a":
+        Console.WriteLine($"seu resultado: {num1} + {num2} = " + (num1 + num2));
+        break;
+    case "s":
+        Console.WriteLine($"seu resultado: {num1} - {num2} = " + (num1 - num2));
+        break;
+    case "m":
+        Console.WriteLine($"seu resultado: {num1} * {num2} = " + (num1 * num2));
+        break;
+    case "d":
+        Console.WriteLine($"seu resultado: {num1} / {num2} = " + (num1 / num2));
+        break;
 }
-else
-{
-    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    Console.WriteLine("E o primeiro número fornecido NÃO é igual ao segundo.");
-}
+Console.Write("pressione qualquer tecla para fechar o terminal...");
+Console.ReadKey();
